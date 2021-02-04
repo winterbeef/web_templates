@@ -1,0 +1,21 @@
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+function onSubmit(token) {
+	document.getElementById("contact-form").submit();
+}
+</script>
+
+<form id="contact-form" action="/mailer.php" method="post">
+<p class="">Your Name:</p>
+<input type="text" name="name" />
+
+<p class="">Message:</p>
+<textarea name="message" rows=12></textarea>
+
+<button class="g-recaptcha"
+	data-sitekey="--RECAPTCHA SECRET KEY--"
+	data-callback='onSubmit'
+	data-action='submit'>Submit</button>
+
+</form>
+
